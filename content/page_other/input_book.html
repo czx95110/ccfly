@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="icon" href=""/>
+    <title>好好学习 天天向上</title>
+    <style>
+        .container{
+            width: 600px;
+            margin: 50px auto;
+            padding: 10px;
+            border: 1px solid #00bfff;
+            border-radius: 8px;
+        }
+        .row{
+            overflow: hidden;
+            line-height: 40px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .row label{
+            float: left;
+            width: 100px;
+            text-align: right;
+        }
+        .row input{
+            float: left;
+            margin-left: 10px;
+            height: 34px;
+            width: 400px;
+            padding-left: 5px;
+            font-size: 16px;
+        }
+        .btn{
+            padding: 10px 50px;
+            outline: 0;
+            border: 0;
+            font-size: 18px;
+            border-radius: 6px;
+            background: #6596ef;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background: #4e7bcc;
+        }
+    </style>
+</head>
+<body>
+
+<header></header>
+<main>
+    <div class="container">
+        <form action="/ccfly/db/upload_book.php" method="POST">
+            <div class="row">
+                <label for="bookName">书籍名：</label>
+                <input type="text" id="bookName" name="bookName" placeholder="请输入书籍名称" autofocus/>
+            </div>
+            <div class="row">
+                <label for="bookAuthor">作者：</label>
+                <input type="text" id="bookAuthor" name="bookAuthor" placeholder="请输入作者"/>
+            </div>
+            <div class="row">
+                <label for="bookTransfer">译者：</label>
+                <input type="text" id="bookTransfer" name="bookTransfer" placeholder="请输入译者"/>
+            </div>
+            <div class="row">
+                <label for="bookPublish">出版社：</label>
+                <input type="text" id="bookPublish" name="bookPublish" placeholder="请输入出版社"/>
+            </div>
+            <div class="row">
+                <label for="bookVersion">版本：</label>
+                <input type="text" id="bookVersion" name="bookVersion" placeholder="请输入出版版本"/>
+            </div>
+            <div class="row">
+                <button type="submit" id="btnSubmit" class="btn">提交</button>
+            </div>
+        </form>
+
+    </div>
+</main>
+<footer></footer>
+
+</body>
+</html>
