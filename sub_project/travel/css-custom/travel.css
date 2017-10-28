@@ -1,0 +1,82 @@
+.navbar-header .travel-logo {
+  display: inline-block;
+  background: #F60; }
+  .navbar-header .travel-logo img {
+    width: 50px;
+    height: 50px; }
+
+.theme-road .row {
+  margin-bottom: 10px; }
+.theme-road .theme-road-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto; }
+  .theme-road .theme-road-item img {
+    width: 100%; }
+.theme-road .self-frame {
+  position: absolute;
+  left: 10%;
+  bottom: 20px;
+  width: 80%;
+  padding: 4px;
+  border: 4px solid #fff;
+  background: transparent;
+  border-radius: 5px; }
+  .theme-road .self-frame span {
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 4px; }
+
+.eco-road .eco-road-item {
+  float: left;
+  width: 50%;
+  padding: 2px 5px; }
+  .eco-road .eco-road-item img {
+    width: 100%; }
+
+.company-intro {
+  position: relative; }
+  .company-intro .down-mask {
+    width: 100%; }
+  .company-intro .intro-title {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    padding: 4px 8px;
+    background-color: #fff;
+    color: #333; }
+  .company-intro .intro-content {
+    position: absolute;
+    width: 86%;
+    height: 80%;
+    top: 60px;
+    left: 7%;
+    z-index: 10;
+    color: #222; }
+    .company-intro .intro-content img {
+      display: block;
+      width: 80%;
+      margin: 10px auto 0; }
+  .company-intro .mask {
+    position: absolute;
+    width: 86%;
+    height: 80%;
+    top: 60px;
+    left: 7%;
+    opacity: .5;
+    z-index: 1;
+    background-color: #ddd; }
+
+.news-center span {
+  color: #777; }
+
+.cmp-address {
+  padding: 10px 0;
+  background-color: #444;
+  color: #fff; }
+  .cmp-address address {
+    margin-bottom: 10px; }

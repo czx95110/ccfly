@@ -1,0 +1,98 @@
+.navbar-brand {
+  padding: 5px; }
+  .navbar-brand > img {
+    height: 100%; }
+
+a:hover {
+  text-decoration: none; }
+
+body {
+  background: #dddddd; }
+
+.container,
+.container-fluid {
+  position: relative; }
+
+.carousel-inner > .item > a > img,
+.carousel-inner > .item > img {
+  width: 100%; }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 94%; } }
+.my-box {
+  margin-top: 10px;
+  padding: 5px 30px; }
+  .my-box .item-box {
+    display: block;
+    padding: 5px 20px;
+    margin-top: 10px;
+    border: 3px solid #eee;
+    border-radius: 5px;
+    transition: all .3s linear; }
+    .my-box .item-box:hover {
+      border-color: #6666cc; }
+      .my-box .item-box:hover .box-body ul {
+        padding: 0 8px 32px; }
+      .my-box .item-box:hover .box-body li {
+        padding: 0;
+        margin-bottom: 0; }
+        .my-box .item-box:hover .box-body li img {
+          width: 100%; }
+  .my-box .box-head {
+    padding: 8px 0;
+    text-align: center; }
+    .my-box .box-head img {
+      max-width: 100px;
+      max-height: 100px;
+      margin: 0 auto; }
+  .my-box .box-body ul {
+    transition: all .3s linear; }
+  .my-box .box-body li {
+    padding: 0 8px;
+    margin-bottom: 16px;
+    transition: all .3s linear; }
+  .my-box .box-body img {
+    width: 100%;
+    max-height: 160px;
+    transition: all .3s linear; }
+
+.section .row {
+  margin-top: 15px; }
+  .section .row [class^='col'] {
+    overflow: hidden;
+    padding: 0;
+    margin-top: 15px; }
+.section .goods-link {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 96%;
+  color: #333; }
+.section .goods-info {
+  position: absolute;
+  left: 0;
+  bottom: -56px;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #fff;
+  transition: all .3s linear; }
+.section .my-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+.section .goods-mod-link {
+  color: #3676B2; }
+.section li:hover .goods-info {
+  bottom: 0; }
+
+.footer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff; }
+  .footer .container {
+    max-width: 1000px; }
+  .footer .list-group-item:hover {
+    background-color: #dddddd;
+    color: #888; }

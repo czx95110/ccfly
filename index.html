@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <link rel="icon" href="common/img/favicon.ico"/>
+  <link rel="stylesheet" href="lib/normalize.css"/>
+  <link rel="stylesheet" href="lib/font-awesome.css"/>
+  <link rel="stylesheet" href="lib/animate.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
+  <script src="lib/wow.js"></script>
+  <title>好好学习-天天向上</title>
+  <!--<base target="_blank"/>-->
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-left">
+      <a href=""><img src="common/img/logo_@300_150.png" alt="top"/></a>
+    </div>
+    <div class="header-right">
+      <canvas id="myTopCanvas" height="150" width="880"></canvas>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <ul class="header-list">
+      <li>
+        <a href="#">
+          <i class="fa fa-fw fa-home"></i>
+          home
+        </a>
+      </li>
+      <li>
+        <a href="content/page_js/catalog_js.html">
+          <i class="fa fa-fw fa-file-code-o"></i>
+          JS
+        </a>
+      </li>
+      <li>
+        <a href="content/page_css/catalog_css.html">
+          <i class="fa fa-fw fa-css3"></i>
+          CSS
+        </a>
+      </li>
+      <li>
+        <a href="content/page_html/a_html_catalog.html">
+          <i class="fa fa-fw fa-html5"></i>
+          HTML
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-fw fa-book"></i>
+          Lib
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-fw fa-codepen"></i>
+          Webpack
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-fw fa-send"></i>
+          Node.js
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    <!-- 左侧 -->
+    <section class="section-left">
+      <form class="form-search">
+        <input class="btn-content" type="text" placeholder="请输入搜索内容"/>
+        <input class="btn-search" type="button" value="搜索"/>
+      </form>
+      <div class="box">
+        <h3 class="box-title">推荐书籍</h3>
+        <ul class="box-list">
+          <li>
+            <p class="ellipsis">《JavaScript权威指南》</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript权威指南》</span></p>
+              <p><span>作者：AAA</span></p>
+              <p><span>出版社：dddd</span></p>
+            </div>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript高级程序设计》</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript高级程序设计》</span></p>
+              <p><span>作者：Nicholas C.Zakas</span></p>
+              <p><span>译者：李松峰 曹力</span></p>
+              <p><span>出版社：人民邮电出版社</span></p>
+            </div>
+
+          </li>
+          <li>
+            <p class="ellipsis">《编写可维护的JavaScript》</p>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript设计模式与开发实践》--曾探</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript设计模式与开发实践》</span></p>
+              <p><span>作者：曾探</span></p>
+              <p><span>出版社：人民邮电出版社</span></p>
+            </div>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript权威指南》</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript权威指南》</span></p>
+              <p><span>作者：AAA</span></p>
+              <p><span>出版社：dddd</span></p>
+            </div>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript高级程序设计》</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript高级程序设计》</span></p>
+              <p><span>作者：Nicholas C.Zakas</span></p>
+              <p><span>译者：李松峰 曹力</span></p>
+              <p><span>出版社：人民邮电出版社</span></p>
+            </div>
+
+          </li>
+          <li>
+            <p class="ellipsis">《编写可维护的JavaScript》</p>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript设计模式与开发实践》--曾探</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript设计模式与开发实践》</span></p>
+              <p><span>作者：曾探</span></p>
+              <p><span>出版社：人民邮电出版社</span></p>
+            </div>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript权威指南》</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript权威指南》</span></p>
+              <p><span>作者：AAA</span></p>
+              <p><span>出版社：dddd</span></p>
+            </div>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript高级程序设计》</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript高级程序设计》</span></p>
+              <p><span>作者：Nicholas C.Zakas</span></p>
+              <p><span>译者：李松峰 曹力</span></p>
+              <p><span>出版社：人民邮电出版社</span></p>
+            </div>
+
+          </li>
+          <li>
+            <p class="ellipsis">《编写可维护的JavaScript》</p>
+          </li>
+          <li>
+            <p class="ellipsis">《JavaScript设计模式与开发实践》--曾探</p>
+            <div class="hover-content">
+              <p><span>书名：《JavaScript设计模式与开发实践》</span></p>
+              <p><span>作者：曾探</span></p>
+              <p><span>出版社：人民邮电出版社</span></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3 class="box-title">第三方库</h3>
+        <ul class="box-list">
+          <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
+          <li><a href="https://daneden.github.io/animate.css/" target="_blank">Animate.Css</a></li>
+          <li><a href="http://mynameismatthieu.com/WOW/" target="_blank">WoW.Js</a></li>
+          <li><a href="https://two.js.org/" target="_blank">Two.Js</a></li>
+          <li><a href="http://v3.bootcss.com/" target="_blank">Bootstrap</a></li>
+          <li><a href="http://echarts.baidu.com/" target="_blank">Echarts</a></li>
+          <!--<li><a href="" target="_blank">fushioncharts</a></li>-->
+          <!--<li><a href="" target="_blank">hightcharts</a></li>-->
+          <li><a href="http://www.fontawesome.com.cn/" target="_blank">FontAwesome</a></li>
+          <li><a href="http://dev.dcloud.net.cn/mui/" target="_blank">Mui</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3 class="box-title">实用工具软件</h3>
+        <ul class="box-list">
+          <li>webstorm</li>
+          <li>sublime</li>
+          <li>xampp</li>
+          <li>ps</li>
+          <li>Hbuilder</li>
+          <li>filezilla</li>
+          <li>egrit</li>
+        </ul>
+      </div>
+    </section>
+    <!-- 右侧 -->
+    <section class="section-right">
+      <!-- 轮播图-->
+      <div class="carousel">
+        <ul class="carousel-content">
+          <li data-content="0" class="active"><a href=""><img src="img_index/index_carousel_1.jpg" alt=""/></a></li>
+          <li data-content="1"><a href=""><img src="img_index/index_carousel_2.jpg" alt=""/></a></li>
+          <li data-content="2"><a href=""><img src="img_index/index_carousel_3.jpg" alt=""/></a></li>
+        </ul>
+        <ul class="carousel-indicator">
+          <li data-indicator="0" class="active"></li>
+          <li data-indicator="1"></li>
+          <li data-indicator="2"></li>
+        </ul>
+      </div>
+      <!-- 5个列表项-->
+      <div class="row-list">
+        <a class="row-list-item" href="">
+          <dl>
+            <dt><img src="img_index/item_list_@180x120.jpg" alt=""/></dt>
+            <dd class="text">laeifjalesfjioajfe;aileajieofjalsejifoafj;afjpeijpwfjalksjfe</dd>
+          </dl>
+        </a>
+        <a class="row-list-item" href="">
+          <dl>
+            <dt><img src="img_index/item_list_@180x120.jpg" alt=""/></dt>
+            <dd class="text">laeifjalesfjioajfe;aileajieofjalsejifoafj;afjpeijpwfjalksjfe</dd>
+          </dl>
+        </a>
+        <a class="row-list-item" href="">
+          <dl>
+            <dt><img src="img_index/item_list_@180x120.jpg" alt=""/></dt>
+            <dd class="text">laeifjalesfjioajfe;aileajieofjalsejifoafj;afjpeijpwfjalksjfe</dd>
+          </dl>
+        </a>
+        <a class="row-list-item" href="">
+          <dl>
+            <dt><img src="img_index/item_list_@180x120.jpg" alt=""/></dt>
+            <dd></dd>
+          </dl>
+        </a>
+        <a class="row-list-item" href="">
+          <dl>
+            <dt><img src="img_index/item_list_@180x120.jpg" alt=""/></dt>
+            <dd></dd>
+          </dl>
+        </a>
+      </div>
+      <!-- 图文列表-->
+      <ul class="content-list">
+        <li>
+          <div class="item-left">
+            <img src="img_index/content_list_@150x100.jpg" alt=""/>
+            <span class="left-top-corner">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </span>
+          </div>
+          <div class="item-right">
+            <h3 class="item-title ellipsis-2">
+              的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多
+            </h3>
+            <p>
+              <span class="s-from ellipsis">来源：<a href="http://blog.csdn.net/zxf13598202302/article/details/52035737"  target="_blank" class="item-link ">http://blog.csdn.net/zxf13598202302/article/details/52035737</a></span>
+            </p>
+            <p>
+              <span class="s-type">类型：CSS</span>
+              <span class="">次数：<b>30</b></span>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="item-left">
+            <img src="img_index/content_list_@150x100.jpg" alt=""/>
+            <span class="left-top-corner">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </span>
+          </div>
+          <div class="item-right">
+            <h3 class="item-title ellipsis-2">
+              的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多
+            </h3>
+            <p>
+              <span class="s-from ellipsis">来源：<a href="http://blog.csdn.net/zxf13598202302/article/details/52035737" target="_blank" class="item-link ">http://blog.csdn.net/zxf13598202302/article/details/52035737</a></span>
+            </p>
+            <p>
+              <span class="s-type">类型：CSS</span>
+              <span class="">次数：<b>30</b></span>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="item-left">
+            <img src="img_index/content_list_@150x100.jpg" alt=""/>
+            <span class="left-top-corner">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-empty"></i>
+            </span>
+          </div>
+          <div class="item-right">
+            <h3 class="item-title ellipsis-2">
+              的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多
+            </h3>
+            <p>
+              <span class="s-from ellipsis">来源：<a href="http://blog.csdn.net/zxf13598202302/article/details/52035737" target="_blank" class="item-link ">http://blog.csdn.net/zxf13598202302/article/details/52035737</a></span>
+            </p>
+            <p>
+              <span class="s-type">类型：CSS</span>
+              <span class="">次数：<b>30</b></span>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="item-left">
+            <img src="img_index/content_list_@150x100.jpg" alt=""/>
+            <span class="left-top-corner">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-empty"></i>
+            </span>
+          </div>
+          <div class="item-right">
+            <h3 class="item-title ellipsis-2">
+              的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多
+            </h3>
+            <p>
+              <span class="s-from ellipsis">来源：<a href="http://blog.csdn.net/zxf13598202302/article/details/52035737" target="_blank" class="item-link ">http://blog.csdn.net/zxf13598202302/article/details/52035737</a></span>
+            </p>
+            <p>
+              <span class="s-type">类型：CSS</span>
+              <span class="">次数：<b>30</b></span>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="item-left">
+            <img src="img_index/content_list_@150x100.jpg" alt=""/>
+            <span class="left-top-corner">
+              <i class="fa fa-star"></i>
+            </span>
+          </div>
+          <div class="item-right">
+            <h3 class="item-title ellipsis-2">
+              的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多 的点点滴滴对对对多多多
+            </h3>
+            <p>
+              <span class="s-from ellipsis">来源：<a href="http://blog.csdn.net/zxf13598202302/article/details/52035737" target="_blank" class="item-link ">http://blog.csdn.net/zxf13598202302/article/details/52035737</a></span>
+            </p>
+            <p>
+              <span class="s-type">类型：CSS</span>
+              <span class="">次数：<b>30</b></span>
+            </p>
+          </div>
+        </li>
+      </ul>
+      <!-- 加载更多-->
+      <div class="btn-content">
+        <button id="loadMore" class="btn btn-theme">浏览更多 <i class="fa fa-angle-double-down "></i></button>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="container">footer</div>
+</footer>
+
+
+<script src="lib/jquery-1.11.3.js"></script>
+<script src="js/component/carousel.js"></script>
+<script src="js/canvas.js"></script>
+</body>
+</html>

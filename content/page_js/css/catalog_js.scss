@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@import "../../../common/css/_common";
+
+header,footer{
+  height: 100px;
+  text-align: center;
+}
+.grid-panel{
+  text-align: center;
+  overflow: hidden;
+  .grid-item{
+    //float: left;
+    display: inline-block;
+    position: relative;
+    padding: 8px;
+    margin:0 20px 24px 0;
+    width: $num;
+    height: $num;
+    border-radius: 6px;
+    background: lighten($baseColor,10%);
+    //background: url("../img/js_backgound.png")no-repeat;
+    //background-size: 100% auto;
+    &:nth-child(3n-1){
+      border-radius: 50%;
+    }
+    &:nth-child(6n){
+      margin-right: 0;
+    }
+    >a{
+      position: absolute;
+      width: 80%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      max-height: 150px;
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: normal!important;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}

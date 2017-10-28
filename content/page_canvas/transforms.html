@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello</title>
+  <style>
+    .c{
+      text-align: center;
+    }
+    .c canvas{
+      background: #ddd;
+      background: url("img/solar_system_bg2.jpg") center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="c">
+  <canvas id="canvas" width="800" height="800"></canvas>
+</div>
+
+<script>
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var width=canvas.width, height=canvas.height;
+  var grid=10;
+  var deg=Math.PI/180;
+  function drawLine(grid) {
+    for( var i=0;i<width;i++){
+      ctx.moveTo(0,grid*i);
+      ctx.lineTo(width,grid*i);
+      ctx.stroke();
+    }
+  }
+  function drawCol(grid) {
+    for( var i=0;i<height;i++){
+      ctx.moveTo(grid*i,0);
+      ctx.lineTo(grid * i, height);
+      ctx.stroke();
+    }
+  }
+  function init() {
+    ctx.strokeStyle='#999';
+    drawLine(grid);
+    drawCol(grid);
+  }
+//  init();
+  var num=1;
+
+  var centerPoint={
+    x:width/2,
+    y:height/2
+  };
+
+  function paintPlanet(r,src,speed) {
+//    drawCircleOrbit(r,'#222');
+    console.log(speed);
+    var planet=new Image();
+    planet.src=src;
+    planet.onload= function () {
+      var w=planet.width, h=planet.height;
+      ctx.save();
+      ctx.translate(centerPoint.x,centerPoint.y);
+      ctx.rotate((speed++)*deg);
+      ctx.scale(.8,.8);
+      ctx.drawImage(planet, -w/2+r, -h/2);
+      ctx.restore();
+     };
+    window.requestAnimationFrame(function (speed) {
+      paintPlanet(r, src, speed);
+     })
+  }
+  function drawCircleOrbit(r,color) {
+    ctx.beginPath();
+    ctx.arc(centerPoint.x,centerPoint.y,r,0,Math.PI*2);
+    ctx.strokeStyle=color;
+    ctx.stroke();
+    ctx.closePath();
+  }
+
+  var speed=5;
+  var r= 100;
+  var src='img/s_planet_01.png';
+  var src2='img/s_planet_02.png';
+  window.requestAnimationFrame(function (speed) {
+    paintPlanet(r,src,speed);
+//    paintPlanet(r+50,src2,speed);
+  });
+
+/*
+  setInterval(function () {
+   speed+=2;
+    ctx.clearRect(0,0,width,height);
+    paintPlanet(80, 'img/s_planet_01.png',speed*3);
+    paintPlanet(120, 'img/s_planet_02.png',speed*2.4);
+    paintPlanet(160, 'img/s_planet_03.png',speed*2);
+    paintPlanet(200, 'img/s_planet_04.png',speed*1.8);
+
+  },150);
+*/
+
+
+
+
+
+/*
+(function(){
+  function draw(ctx){
+    ctx.beginPath();
+    ctx.fillStyle="red";
+    ctx.moveTo(0,0);
+    ctx.arc(50,50,10,0,Math.PI*2);
+    ctx.fill();
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillStyle="yellow";
+    ctx.moveTo(0,0);
+    ctx.arc(90,90,5,0,Math.PI*2);
+    ctx.fill();
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillStyle="blue";
+    ctx.moveTo(0,0);
+    ctx.arcTo(-50,50,0,100,50);
+    ctx.fill();
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.fillStyle="green";
+    ctx.moveTo(0,0);
+    ctx.arcTo(-50,-50,-200,0,100);
+    ctx.fill();
+    ctx.closePath();
+    ctx.strokeRect(0, 0, 200, 100);
+  }
+  function rotate(ctx,num){
+    ctx.clearRect(0,0,width,height);
+    ctx.save();
+    ctx.translate(400,400);
+    ctx.strokeRect(0,0,400,300);
+    ctx.rotate(num*Math.PI/180);
+    draw(ctx);
+    ctx.restore();
+  }
+  setInterval(function () {
+    num+=5;
+    rotate(ctx, num);
+//      draw(ctx);
+  },100);
+})();
+*/
+
+  // from https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Basic_animations
+/*
+  (function(){
+    var sun = new Image();
+    var moon = new Image();
+    var earth = new Image();
+    var venus=new Image();
+    var mercury=new Image();
+    function init(){
+      sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
+      moon.src = 'img/s_planet_09.png';
+      earth.src = 'img/s_planet_03.png';
+      venus.src = 'img/s_planet_02.png';
+      mercury.src='img/s_planet_01.png';
+      window.requestAnimationFrame(draw);
+    }
+
+    function draw() {
+      var ctx = document.getElementById('canvas').getContext('2d');
+
+      ctx.globalCompositeOperation = 'destination-over';
+      ctx.clearRect(0,0,300,300); // clear canvas
+
+      ctx.fillStyle = 'rgba(0,0,0,0.4)';
+      ctx.strokeStyle = 'rgba(0,153,255,0.4)';
+      ctx.save();
+      ctx.translate(150,150);
+
+      // Earth
+      var time = new Date();
+      ctx.rotate( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds() );
+      ctx.translate(105,0);
+      ctx.fillRect(0,-12,50,24); // Shadow
+      ctx.drawImage(earth,-12,-12);
+
+      // Moon
+      ctx.save();
+      ctx.rotate( ((2*Math.PI)/6)*time.getSeconds() + ((2*Math.PI)/6000)*time.getMilliseconds() );
+      ctx.translate(0,28.5);
+      ctx.drawImage(moon,-3.5,-3.5);
+      ctx.restore();
+
+      ctx.restore();
+
+      ctx.beginPath();
+      ctx.arc(150,150,105,0,Math.PI*2,false); // Earth orbit
+      ctx.stroke();
+
+      ctx.drawImage(sun,0,0,300,300);
+
+      window.requestAnimationFrame(draw);
+    }
+
+    init();
+  })();
+*/
+</script>
+</body>
+</html>

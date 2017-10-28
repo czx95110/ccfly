@@ -1,0 +1,147 @@
+@charset "UTF-8";
+@import "variable";
+
+.navbar-brand {
+  padding: 5px;
+  > img {
+    height: 100%;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  background: $bgColor;
+}
+
+.container,
+.container-fluid
+{
+  position: relative;
+}
+.carousel-inner > .item > a > img,
+.carousel-inner > .item > img {
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 94%;
+  }
+}
+
+.my-box{
+  margin-top: 10px;
+  padding: 5px 30px;
+  .item-box{
+    display: block;
+    padding: 5px 20px;
+    margin-top: 10px;
+    border: 3px solid #eee;
+    border-radius: 5px;
+    transition:all .3s linear;
+    &:hover{
+      border-color: $baseColor;
+      .box-body{
+        ul{
+          padding: 0 8px 32px;
+        }
+        li{
+          padding: 0;
+          margin-bottom: 0;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .box-head{
+    padding: 8px 0;
+    text-align: center;
+    img{
+      max-width: 100px;
+      max-height: 100px;
+      margin: 0 auto;
+    }
+  }
+  .box-body{
+    ul{
+      transition: all .3s linear;
+    }
+    li{
+      padding: 0 8px;
+      margin-bottom: 16px;
+      transition: all .3s linear;
+    }
+    img{
+      width: 100%;
+      max-height: 160px;
+      transition: all .3s linear;
+    }
+  }
+
+}
+
+.section {
+  .row {
+    margin-top: 15px;
+    [class^='col'] {
+      overflow: hidden;
+      padding: 0;
+      margin-top: 15px;
+    }
+  }
+  .goods-link{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 96%;
+    color: #333;
+  }
+  .goods-info {
+    position: absolute;
+    left: 0;
+    bottom: -56px;
+    width: 100%;
+    padding: 0 20px;
+    background-color: #fff;
+    transition: all .3s linear;
+  }
+  .my-ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .goods-mod-link{
+    color: #3676B2;
+  }
+
+  li:hover {
+      .goods-info {
+      bottom: 0;
+    }
+  }
+
+
+}
+
+
+.footer{
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #fff;
+  .container{
+    max-width: 1000px;
+  }
+  .list-group-item{
+    //background-color: $bgColor;
+    &:hover{
+      background-color: $bgColor;
+      color: #888;
+    }
+  }
+}

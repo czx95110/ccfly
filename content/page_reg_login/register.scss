@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import "../../common/css/_common";
+
+.form-box{
+  width: 500px;
+  margin: 50px auto 0;
+  background: url("../../common/img/reg_bg.jpg")no-repeat;
+  border-radius: 8px;
+  .form-row{
+    line-height: 47px;
+    .form-label{
+      display: inline-block;
+      width: 90px;
+      text-align: center;
+      color: #fff;
+    }
+    .form-input{
+      height: 31px;
+      padding-left: 5px;
+      border:0;
+      outline: 0;
+      font-size: 16px;
+      border-radius: 3px;
+    }
+    .form-info{
+      display: none;
+      color: #0f0;
+    }
+    .btn{
+      padding: 8px 40px;
+      outline: 0;
+      border:0;
+      background: $baseColor;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover{
+        background: darken($baseColor,10%);
+      }
+    }
+  }
+}

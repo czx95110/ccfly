@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css-custom/index.css"/>
+  <title>my travel</title>
+  <base target="_blank"/>
+</head>
+<body>
+<!--顶部导航-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"/></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">产品产品 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">官官官官</a></li>
+        <li><a href="#">商商商商</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+          role="button" aria-haspopup="true" aria-expanded="false">服务支持
+            <i class="caret"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="">Item A</a></li>
+            <li><a href="">Item B</a></li>
+            <li><a href="">Item C</a></li>
+            <li><a href="">Item D</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="搜索">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+      <ul class="nav navbar-right">
+        <a href="html/register.html" class="btn navbar-btn bg-primary">register</a>
+        <a href="html/login.html" class="btn navbar-btn bg-success">login</a>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Carousel-->
+<div id="carouselContainer" class="carousel slide"
+     data-ride="carousel" data-interval="2500">
+  <!-- 轮播指示小圆点-->
+  <ol class="carousel-indicators">
+    <li data-target="#carouselContainer" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselContainer" data-slide-to="1"></li>
+    <li data-target="#carouselContainer" data-slide-to="2"></li>
+  </ol>
+  <!-- 轮播图片区-->
+  <div class="carousel-inner">
+    <div class="item active">
+      <a href="https://www.baidu.com">
+        <img src="img/1.jpg" class="img-responsive" alt="carousel img"/>
+
+        <div class="carousel-caption">
+          <h3>goods A</h3>
+
+          <p>hello buy me </p>
+        </div>
+
+      </a>
+    </div>
+    <div class="item">
+      <a href="">
+        <img src="img/2.jpg" class="img-responsive" alt="carousel img"/>
+      </a>
+    </div>
+    <div class="item">
+      <a href="">
+        <img src="img/3.jpg" class="img-responsive" alt="catousel img"/>
+      </a>
+    </div>
+  </div>
+  <!-- 左右箭头-->
+  <a href="#carouselContainer" class="left carousel-control" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">previous</span>
+  </a>
+  <a href="#carouselContainer" class="right carousel-control" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">next</span>
+  </a>
+
+</div>
+<!--图片-->
+<div class="container-fluid my-box">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-sm-6 ">
+        <a href="#" class="item-box">
+          <div class="box-head">
+            <img src="img/item-box-title2.jpg" class="img-responsive img-circle"/>
+
+            <h3>滨海仲夏</h3>
+          </div>
+          <div class="box-body">
+            <ul class="list-unstyled row">
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-5.jpg"/></li>
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-6.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-7.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-8.jpg"/></li>
+            </ul>
+          </div>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-6 ">
+        <a href="#" class="item-box">
+          <div class="box-head">
+            <img src="img/item-box-title1.jpg" class="img-responsive img-circle"/>
+
+            <h3>日出东方</h3>
+          </div>
+          <div class="box-body">
+            <ul class="list-unstyled row">
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-1.jpg"/></li>
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-2.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-3.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-4.jpg"/></li>
+            </ul>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-sm-6 ">
+        <a href="#" class="item-box">
+          <div class="box-head">
+            <img src="img/item-box-title3.jpg" class="img-responsive img-circle"/>
+
+            <h3>冰雪奇景</h3>
+          </div>
+          <div class="box-body">
+            <ul class="list-unstyled row">
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-9.jpg"/></li>
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-10.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-11.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-12.jpg"/></li>
+            </ul>
+          </div>
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-6 ">
+        <a href="#" class="item-box">
+          <div class="box-head">
+            <img src="img/item-box-title4.jpg" class="img-responsive img-circle"/>
+
+            <h3>浩瀚沙漠</h3>
+          </div>
+          <div class="box-body">
+            <ul class="list-unstyled row">
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-13.jpg"/></li>
+              <li class="col-xs-6 up-btm"><img class="img-responsive" src="img/item-box-14.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-15.jpg"/></li>
+              <li class="col-xs-6 under-btm"><img class="img-responsive" src="img/item-box-16.jpg"/></li>
+            </ul>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--列表项-->
+<div class="container section">
+  <ul class="row list-unstyled">
+    <li class="col-xs-12 col-md-6 col-lg-4">
+      <a href="" class="goods-link">
+        <img src="img/goods-list-1.jpg" class="img-responsive" alt="goods-list"/>
+
+        <div class="goods-info">
+          <h3 class="my-ellipsis">旅行要学会随遇而安，淡然一点，走走停停。</h3>
+
+          <p class="my-ellipsis">有时间，我们可以去爬山，去看日出，去散步，去欣赏大自然，
+            去陌生的街角，去做一切我们曾经或现在也很想做的事情，
+            可以有一个人陪着你，也可以你一个人，总之那一刻，你是自由的，
+            不仅是身体上的自由，更重要的是心理上的完全自由和放松，你会发现，
+            曾经以为很难做到的事情，其实只要你愿意，一切都可以变得很容易。</p>
+
+          <p><b class="goods-mod-link">了解详情</b></p>
+        </div>
+
+      </a>
+    </li>
+    <li class="col-xs-12 col-md-6 col-lg-4">
+      <a href="" class="goods-link">
+        <img src="img/goods-list-2.jpg" class="img-responsive" alt="goods-list"/>
+
+        <div class="goods-info">
+          <h3 class="my-ellipsis">因为有梦，所以勇敢出发，选择出发，便只顾风雨兼程。</h3>
+
+          <p class="my-ellipsis">人生就像是一场旅行，遇到的既有感人的，也有伤心的，
+            既有令人兴奋的，也有令人灰心的，既有美妙的风景，
+            也会有称不上景只有风的地方。人生就是要感受美丽的善良的，
+            丑恶的病态的。而只有在充满了艰辛的人生旅途中，始终调整好自己观风景的心态，
+            才能做到人在旅途，感悟人生，享受人生。</p>
+
+          <p><b class="goods-mod-link">了解详情</b></p>
+        </div>
+      </a>
+    </li>
+    <li class="col-xs-12 col-md-6 col-lg-4">
+      <a href="" class="goods-link">
+        <img src="img/goods-list-3.jpg" class="img-responsive" alt="goods-list"/>
+
+        <div class="goods-info">
+          <h3 class="my-ellipsis">我们一路上兴致勃勃地参观，当夕阳西下时，才恋恋不舍地离开。</h3>
+
+          <p class="my-ellipsis">
+            有一种旅行，叫单车旅行。它没有奢侈准备，只是需要垮上后座的勇气和一颗想走即走的心，就算是一辆永久单车也能让你的梦想走很远。一个人骑行，孤单却内省;一群人骑行，壮观而有力。希望有一天，自己也像他们一样，踩着单车上路，经历一种身体下了地狱，眼睛进入天堂，灵魂归入故里。</p>
+
+          <p><b class="goods-mod-link">了解详情</b></p>
+        </div>
+      </a>
+    </li>
+    <li class="col-xs-12 col-md-6 col-lg-4">
+      <a href="" class="goods-link">
+        <img src="img/goods-list-4.jpg" class="img-responsive" alt="goods-list"/>
+
+        <div class="goods-info">
+          <h3 class="my-ellipsis">人生最好的旅行，就是你在一个陌生的地方，发现一种久违的感动。</h3>
+
+          <p class="my-ellipsis">失去的我们不妨让其失去，因为它可让我们少些惆怅;得到的我们不妨少些满足，因为它可让我们多些清醒。</p>
+
+          <p><b class="goods-mod-link">了解详情</b></p>
+        </div>
+      </a>
+    </li>
+    <li class="col-xs-12 col-md-6 col-lg-4">
+      <a href="" class="goods-link">
+        <img src="img/goods-list-5.jpg" class="img-responsive" alt="goods-list"/>
+
+        <div class="goods-info">
+          <h3 class="my-ellipsis">流转的时光，都成为命途中美丽的点缀，看天，看雪，安安静静，不言不语都是好风景。</h3>
+
+          <p class="my-ellipsis">
+            有时我们选择改变，并非经过深思熟虑，而更像是听见了天地间冥冥中的呼唤，呼唤你前往另一个地方，过上另一种生活。你并不一定会从此拥有更美好的人生，可你仍然感谢天地和人世所带来的这些变化和发生。不然你大概会一直好奇和不甘吧——家门前的那条小路，到底通向了什么样的远方呢?</p>
+
+          <p><b class="goods-mod-link">了解详情</b></p>
+        </div>
+      </a>
+    </li>
+    <li class="col-xs-12 col-md-6 col-lg-4">
+      <a href="" class="goods-link">
+        <img src="img/goods-list-6.jpg" class="img-responsive" alt="goods-list"/>
+
+        <div class="goods-info">
+          <h3 class="my-ellipsis">当遗忘变成另一种开始，我踏出了旅途的第一步!</h3>
+
+          <p class="my-ellipsis">
+            你写PPT时，阿拉斯加的鳕鱼正跃出水面，你看报表时，梅里雪山的金丝猴刚好爬上树尖。你挤进地铁时，西藏的山鹰一直盘旋云端，你在会议中吵架时，尼泊尔的背包客一起端起酒杯坐在火堆旁。有一些穿高跟鞋走不到的路，有一些喷着香水闻不到的空气，有一些在写字楼里永远遇不见的人。</p>
+
+          <p><b class="goods-mod-link">了解详情</b></p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>
+<!--底部联系表-->
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="list-group bg-info">
+              <span class="list-group-item disabled">item1111</span>
+              <a href="#" class="list-group-item ">BBB</a>
+              <a href="#" class="list-group-item ">CCC</a>
+              <a href="#" class="list-group-item ">DDD</a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="list-group bg-danger">
+              <span class="list-group-item disabled">item2222</span>
+              <a href="#" class="list-group-item ">FFF</a>
+              <a href="#" class="list-group-item ">GGG</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="list-group bg-success">
+              <span class="list-group-item disabled">联系我们</span>
+             </div>
+
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="list-group">
+              <span   class="list-group-item disabled">帮助中心</span>
+              <a href="#" class="list-group-item ">关于我们</a>
+              <a href="#" class="list-group-item ">下载中心</a>
+              <a href="#" class="list-group-item ">视频</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

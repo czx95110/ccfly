@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@import "variable";
+.tabs{
+  margin: 0;
+}
+
+.col-xs-4 {
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 8px;
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #f60;
+    color: #fff;
+    border-radius: 5px;
+  }
+}
+
+
+.details {
+  margin-top: 10px;
+  dd{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@import "footer";

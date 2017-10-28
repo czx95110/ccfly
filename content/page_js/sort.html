@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>冒泡排序</title>
+  <style>
+    h1, h2, h3, h4, h5, body, p {
+      margin: 0;
+    }
+
+    .c {
+      margin: 5px;
+      text-align: center;
+    }
+
+    .box {
+      width: 94%;
+      padding: 10px;
+      margin: 20px auto 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-image: linear-gradient(to bottom, #429de0, #fff, #70bac1);
+    }
+
+    .title {
+      color: #3e49dc;
+    }
+
+    pre {
+      padding: 5px;
+      background: #fff;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h3 class="c">冒泡排序</h3>
+  <h5>
+    <span class="title">算法步骤：</span>
+    比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+    对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。
+    这步做完后，最后的元素会是最大的数。
+    针对所有的元素重复以上的步骤，除了最后一个。
+    持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+  </h5>
+  <pre>
+  function bubbleSort(arr) {
+    for( var i=0;i&lt;arr.length;i++){
+      for( var j=0;j&lt;arr.length-i;j++){
+        if(arr[j]>arr[j+1]){
+          arr[j]^=arr[j+1];
+          arr[j+1]^=arr[j];
+          arr[j]^=arr[j+1];
+        }
+      }
+    }
+    return arr;
+  }
+  </pre>
+</div>
+<div class="box">
+  <h3 class="c">选择排序</h3>
+  <h5>
+    <span class="title">算法步骤</span>
+    选择排序从数组的开头开始， 将第一个元素和其他元素进行比较。
+    检查完所有元素后， 最小的元素会被放到数组的第一个位置，
+    然后算法会从第二个位置继续。
+    这个过程一直进行， 当进行到数组的倒数第二个位置时， 所有的数据便完成了排序。
+    选择排序会用到嵌套循环。外循环从数组的第一个元素移动到倒数第二个元素；
+    内循环从第二个数组元素移动到最后一个元素，查找比当前外循环所指向的元素小的元素。每次内循环
+    迭代后，数组中最小的值都会被赋值到合适的位置。
+  </h5>
+  <pre>
+  function selectSort(arr) {
+    for( var i=0;i&lt;arr.length-1;i++){
+      for( var j=i+1;j&lt;arr.length;j++){
+        if(arr[i]>arr[j]){
+          arr[i]^=arr[j];
+          arr[j]^=arr[i];
+          arr[i]^=arr[j];
+        }
+      }
+    }
+    return arr;
+  }
+  </pre>
+</div>
+<div class="box">
+  <h3 class="c">快速排序</h3>
+  <h5>
+    <span class="title">算法描述：</span>
+    （1）在数据集之中，选择一个元素作为"基准"（base）。
+    （2）所有小于"基准"的元素，都移到"基准"的左边；所有大于"基准"的元素，都移到"基准"的右边。
+    （3）对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。
+  </h5>
+  <pre>
+  function quickSort(a) {
+    if (a.length <= 1) {
+      return a;
+    }
+    var pivot = a[0];
+    var lf = [], rt = [];
+    for (var i = 1; i < a.length; i++) {
+      a[i] < pivot ? lf.push(a[i]) : rt.push(a[i]);
+    }
+    return quickSort(lf).concat(pivot, quickSort(rt));
+  }
+  </pre>
+</div>
+<div class="box">
+  <h3 class="c">插入排序</h3>
+  <h5>
+    <span class="title">算法步骤：</span>
+  </h5>
+  <pre>
+
+  </pre>
+</div>
+
+<div style="text-align: center;">
+  <p style="color:#e00;">
+    排序20000个随机数 平均耗时：
+  </p>
+  <table border="1" cellpadding="5" style="margin: 0 auto;">
+    <tr>
+      <td>快速排序</td>
+      <td>选择排序</td>
+      <td>冒泡排序</td>
+    </tr>
+    <tr>
+      <td>30-50</td>
+      <td>230-310</td>
+      <td>1700-1900</td>
+    </tr>
+  </table>
+
+</div>
+<script>
+  var arrc = [];
+  function createRandomArray() {
+    var arr = [];
+    for (var i = 0; i < 20000; i++) {
+      arr.push(Math.floor(Math.random() * 500));
+    }
+    arrc = arr;
+  }
+
+  createRandomArray();
+  function bubbleSort(arr) {
+    for (var i = 0; i < arr.length; i++) {
+      for (var j = 0; j < arr.length - i; j++) {
+        if (arr[j] > arr[j + 1]) {
+          arr[j] ^= arr[j + 1];
+          arr[j + 1] ^= arr[j];
+          arr[j] ^= arr[j + 1];
+        }
+      }
+//      console.log(arr);
+    }
+    return arr;
+  }
+  function selectSort(arr) {
+    for (var i = 0; i < arr.length - 1; i++) {
+      for (var j = i + 1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) {
+          arr[i] ^= arr[j];
+          arr[j] ^= arr[i];
+          arr[i] ^= arr[j];
+        }
+      }
+    }
+    return arr;
+  }
+  function quickSort(a) {
+    if (a.length <= 1) {
+      return a;
+    }
+    var pivot = a[0];
+    var lf = [], rt = [];
+    for (var i = 1; i < a.length; i++) {
+      a[i] < pivot ? lf.push(a[i]) : rt.push(a[i]);
+    }
+    return quickSort(lf).concat(pivot, quickSort(rt));
+  }
+
+  console.time('a');
+//  console.log(quickSort(arrc));
+  console.timeEnd('a');
+
+  console.time('b');
+//  console.log(selectSort(arrc));
+  console.timeEnd('b');
+
+  console.time('c');
+//  console.log(bubbleSort(arrc));
+  console.timeEnd('c');
+
+
+</script>
+
+</body>
+</html>

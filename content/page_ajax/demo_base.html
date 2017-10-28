@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello</title>
+  <script src="../../lib/my/my_getXHR.js"></script>
+</head>
+<body>
+
+
+<button type="button" onclick="getcc()">click</button>
+
+
+<script>
+  function getcc() {
+    var xhr = getXMLHTTPRequest();
+    xhr.onreadystatechange= function () {
+      if(xhr.readyState==4){
+        if(xhr.status===200){
+          var div=document.createElement('div');
+          div.innerHTML=xhr.responseText+'<br/>';
+          div.innerHTML+=(xhr.getAllResponseHeaders().replace(/\n/g,'<br/>'));
+          div.innerHTML+=('<hr/>');
+          document.body.appendChild(div);
+        }
+      }
+    };
+    xhr.open('GET','test_01.php');
+    xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    xhr.send(null);
+  }
+</script>
+<script src="../../lib/my/my_serializeForm.js"></script>
+</body>
+</html>

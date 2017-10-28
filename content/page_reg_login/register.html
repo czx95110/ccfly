@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello</title>
+  <link rel="stylesheet" href="../../lib/normalize.css"/>
+  <link rel="stylesheet" href="../../lib/font-awesome.css"/>
+  <link rel="stylesheet" href="../../css/page_reg_login/register.css"/>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-box">
+    <form action="">
+      <div class="form-row">
+        <label class="form-label" for="userName">用户名：</label>
+        <input id="userName" class="form-input" name="userName" type="text" placeholder="请输入6-12位的用户名" maxlength="12" autofocus/>
+        <span class="form-info"><i class="fa fa-check"></i>恭喜，用户名可用</span>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="userPwd">密码：</label>
+        <input id="userPwd" class="form-input" name="userPwd" type="password" placeholder="请输入6-15位的密码" maxlength="15"/>
+      </div>
+      <div class="form-row">
+        <label class="form-label" for="userPwdConfirm">确认密码：</label>
+        <input id="userPwdConfirm" class="form-input" name="userPwdConfirm" type="password" placeholder="请确认密码"/>
+      </div>
+      <div class="form-row ">
+        <input id="formSubmit" class="btn" type="button" value="确认提交"/>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../../lib/jquery-1.11.3.min.js"></script>
+<script src="../../lib/layer/layer.js"></script>
+<script src="register.js"></script>
+</body>
+</html>

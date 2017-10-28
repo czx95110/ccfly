@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello</title>
+  <style>
+    button{
+      float: left;
+      width: 24.5%;
+      height: 36px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      margin-left: 0.5%;
+      border-radius: 50px;
+      cursor: pointer;
+      outline: 0;
+      border: 0;
+      background-image: linear-gradient(to top,#266aaf,#fff);
+    }
+  </style>
+  <script src="../lib/jquery-1.11.3.min.js"></script>
+  <script src="../lib/layer/layer.js"></script>
+</head>
+<body>
+
+<div class="cd" style="margin: 100px auto; width: 500px;overflow:hidden;">
+  <button id="layer01">tips</button>
+  <button id="layer02" title="cc">btn02</button>
+  <button id="layer03">btn03</button>
+  <button id="layer04">btn04</button>
+  <button id="layer05">btn05</button>
+  <button id="layer06">btn06</button>
+  <button id="layer07">btn07</button>
+  <button id="layer08">btn08</button>
+  <button id="layer09">btn09</button>
+  <button id="layer10">btn10</button>
+  <button id="layer11">btn11</button>
+  <button id="layer12">btn12</button>
+  <button id="layer13">btn13</button>
+  <button id="layer14">btn14</button>
+  <button id="layer15">btn15</button>
+  <button id="layer16">btn16</button>
+  <button id="layer17">btn17</button>
+  <button id="layer18">btn18</button>
+  <button id="layer19">btn19</button>
+  <button id="layer20">btn20</button>
+</div>
+
+<script>
+  layer.msg('hello');
+  $('#layer01').on('click', function (e) {
+    var msg='tips from me';
+    layer.tips(msg,'#layer01',{ //msg弹出内容，要吸附的元素（id/class）
+      tips:[1,'#f60'], //1234分别表示上右下左4个方向，后面是背景颜色。
+      tipsMore:true, //允许多个
+      time:5000, //延时多久关闭
+      area:['100px','100px'], //设置宽度和高度。 默认是自动的
+      // title: ['文本', 'font-size:18px;'] 在tips下无效
+      // icon:1
+    });
+
+  });
+
+</script>
+</body>
+</html>

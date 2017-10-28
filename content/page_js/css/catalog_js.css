@@ -1,0 +1,102 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body, p, ul, ol, li, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+body {
+  font-family: cursive; }
+
+img {
+  border: 0;
+  vertical-align: middle; }
+
+a {
+  text-decoration: none;
+  color: #333; }
+
+.container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 16px; }
+  .container:before {
+    content: '';
+    display: block;
+    clear: both; }
+  .container:after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.lf {
+  float: left; }
+
+.rt {
+  float: right; }
+
+.hide {
+  display: none; }
+
+.invisible {
+  visibility: hidden; }
+
+.active {
+  display: block; }
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+.ellipsis-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
+
+header, footer {
+  height: 100px;
+  text-align: center; }
+
+.grid-panel {
+  text-align: center;
+  overflow: hidden; }
+  .grid-panel .grid-item {
+    display: inline-block;
+    position: relative;
+    padding: 8px;
+    margin: 0 20px 24px 0;
+    width: 180px;
+    height: 180px;
+    border-radius: 6px;
+    background: #6baaec; }
+    .grid-panel .grid-item:nth-child(3n-1) {
+      border-radius: 50%; }
+    .grid-panel .grid-item:nth-child(6n) {
+      margin-right: 0; }
+    .grid-panel .grid-item > a {
+      position: absolute;
+      width: 80%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 150px;
+      display: -webkit-box;
+      overflow: hidden;
+      white-space: normal !important;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical; }
+      .grid-panel .grid-item > a:hover {
+        color: #fff; }
+
+/*# sourceMappingURL=catalog_js.css.map */

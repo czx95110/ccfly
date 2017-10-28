@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello-game</title>
+  <link rel="stylesheet" href="game_sgs.css"/>
+</head>
+<body>
+
+<div class="container">
+  <ul id="panel" class="panel">
+    <li class="card pst-a">
+      <b class="txt txt-up">A</b>
+      <div class="img">
+        <b class="cell"></b>
+      </div>
+      <b class="txt txt-down">A</b>
+    </li>
+    <li class="card pst-b">
+      <b class="txt txt-up">A</b>
+      <div class="img">
+        <b class="cell"></b>
+        <b class="cell op"></b>
+      </div>
+      <b class="txt txt-down">A</b>
+    </li>
+    <li class="card pst-b">
+      <b class="txt txt-up">A</b>
+      <div class="img">
+        <b class="cell"></b>
+        <b class="cell"></b>
+        <b class="cell op"></b>
+      </div>
+      <b class="txt txt-down">A</b>
+    </li>
+    <li class="card pst-4">
+      <b class="txt txt-up">A</b>
+      <div class="img">
+        <b class="cell"></b>
+        <b class="cell"></b>
+        <b class="cell op"></b>
+        <b class="cell op"></b>
+      </div>
+      <b class="txt txt-down">A</b>
+    </li>
+
+
+
+  </ul>
+</div>
+
+<script src="../../lib/jquery-1.11.3.min.js"></script>
+<script src="game_sgs.js"></script>
+<script>
+  var number=1;
+  var frag = document.createDocumentFragment();
+  var html='';
+  for( var i=1;i<=13;i++){
+    var card = new Card('sha',i,'black',1);
+    var li = document.createElement('li');
+    switch (i){
+      case 1:
+        card.setNumber('A');
+        break;
+      case 11:
+        card.setNumber('J');
+        break;
+      case 12:
+        card.setNumber('Q');
+        break;
+      case 13:
+        card.setNumber('K');
+        break;
+    }
+    html='<b class="txt txt-up">' + card.number +
+      '</b>' +
+      '<b class="txt txt-down">' + card.number +
+      '</b>';
+    li.innerHTML=html;
+    frag.appendChild(li);
+  }
+  document.getElementById('panel').appendChild(frag);
+</script>
+</body>
+</html>

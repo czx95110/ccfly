@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello</title>
+  <style>
+    .c{
+      text-align: center;
+    }
+    .c canvas{
+      background: #ddd;
+      background: url("img/solar_system_bg.jpg");
+      /*width: 600px;*/
+    }
+  </style>
+</head>
+<body>
+
+<div class="c">
+  <canvas id="canvas" width="800" height="800"></canvas>
+</div>
+
+<script>
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var width=canvas.width, height=canvas.height;
+  var grid=100;
+  var deg=Math.PI/180;
+  function drawLine(grid) {
+    for( var i=0;i<width;i++){
+      ctx.moveTo(0,grid*i);
+      ctx.lineTo(width,grid*i);
+      ctx.stroke();
+    }
+  }
+  function drawCol(grid) {
+    for( var i=0;i<height;i++){
+      ctx.moveTo(grid*i,0);
+      ctx.lineTo(grid * i, height);
+      ctx.stroke();
+    }
+  }
+  function init() {
+    ctx.strokeStyle='#999';
+    drawLine(grid);
+    drawCol(grid);
+  }
+  init();
+
+  var centerPoint={
+    x:width/2,
+    y:height/2
+  };
+  // 绘制太阳
+  function paintSun(src) {
+    ctx.save();
+    var sun = new Image();
+    sun.src=src;
+    sun.onload= function () {
+      var w=sun.width, h=sun.height;
+      ctx.drawImage(sun, centerPoint.x-w/2, centerPoint.y-h/2);
+    };
+    ctx.restore();
+  }
+  // 绘制行星
+  function paintPlanet(r,src,i) {
+//    drawCircleOrbit(r,'#222');
+    ctx.save();
+    var planet=new Image();
+    planet.src=src;
+    planet.onload= function () {
+      var w=planet.width, h=planet.height;
+      var cp={
+        x:centerPoint.x-w/2+r*Math.cos(i*deg),
+        y:centerPoint.y-h/2+r*Math.sin(i*deg)
+      };
+
+      ctx.drawImage(planet,cp.x,cp.y);
+      if(src=='img/s_planet_03.png'){
+        paintSatellite(cp,r,28,'img/s_planet_09.png',10);
+      }
+    };
+    ctx.restore();
+  }
+  // 绘制月球
+  function paintSatellite(cp,r,rs,src,angle) {
+    ctx.save();
+    var satellite=new Image();
+    satellite.src=src;
+    var w=satellite.width,h=satellite.height;
+    satellite.onload= function () {
+        ctx.drawImage(satellite,cp.x+w/2+rs*Math.cos(angle),cp.y+h/2+rs*Math.sin(angle));
+      angle+=10;
+    }
+  }
+  // 绘制圆形轨道
+  function drawCircleOrbit(r,color) {
+    ctx.beginPath();
+    ctx.arc(centerPoint.x,centerPoint.y,r,0,Math.PI*2);
+    ctx.strokeStyle=color;
+    ctx.stroke();
+    ctx.closePath();
+  }
+  var i=0.1,r=70,d=2;
+  window.onload= function () {
+    setInterval(function () {
+      draw();
+    },100);
+  };
+  function draw() {
+    i+=0.2;
+    paintSun('img/s_00_sun.png');
+    ctx.clearRect(0, 0, width, height);
+    paintPlanet(70,'img/s_planet_01.png',47.89*i);
+    paintPlanet(110,'img/s_planet_02.png',35.03*i);
+    paintPlanet(150,'img/s_planet_03.png',30*i);
+    paintPlanet(190,'img/s_planet_04.png',24*i);
+    paintPlanet(230,'img/s_planet_05.png',13.06*i);
+    paintPlanet(280,'img/s_planet_06.png',9.64*i);
+    paintPlanet(320,'img/s_planet_07.png',6.81*i);
+    paintPlanet(360,'img/s_planet_08.png',5.43*i);
+
+  }
+
+</script>
+</body>
+</html>

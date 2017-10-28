@@ -1,0 +1,28 @@
+.tabs {
+  margin: 0; }
+
+.col-xs-4 {
+  text-align: center;
+  margin-top: 10px;
+  padding: 0 8px; }
+  .col-xs-4 a {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #f60;
+    color: #fff;
+    border-radius: 5px; }
+
+.details {
+  margin-top: 10px; }
+  .details dd {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+
+.cmp-address {
+  padding: 10px 0;
+  background-color: #444;
+  color: #fff; }
+  .cmp-address address {
+    margin-bottom: 10px; }

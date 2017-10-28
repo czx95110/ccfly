@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello</title>
+</head>
+<body>
+
+<canvas id="myTopCanvas" width="900" height="150"></canvas>
+
+<script>
+  (function () {
+    var canvas = document.getElementById('myTopCanvas');
+    var ctx = canvas.getContext('2d');
+    canvas.style.background = '#fff';
+    var number =20;
+    function randomColor(opacity) {
+      var r, g, b;
+      opacity = opacity || 1;
+      r = randomNumber();
+      g = randomNumber();
+      b = randomNumber();
+      return 'rgba(' + r + ',' + g + ',' + b + ',' + opacity + ')';
+    }
+    function randomNumber(min, max) {
+      min = min || 0;
+      max = max || 255;
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    ctx.strokeStyle = 'rgba(0,255,0,1)';
+    // 随机泡泡
+    popBubble(number);
+    var timer = setInterval(function () {
+      popBubble(number);
+    },1000);
+    function popBubble(num) {
+      var maxRadius=20, minRadius=2;
+      var zone={
+        width:900,
+        height:150
+      };
+      ctx.clearRect(0, 0, zone.width, zone.height);
+      for( var i=0;i<num;i++){
+       ctx.beginPath();
+        var circleObject={
+          x:randomNumber(maxRadius,zone.width-maxRadius),
+          y:randomNumber(maxRadius,zone.height-maxRadius),
+          rad:randomNumber(minRadius,maxRadius)
+        };
+        var gr=ctx.createRadialGradient(circleObject.x,circleObject.y,1,circleObject.x,circleObject.y,circleObject.rad);
+        gr.addColorStop(0,randomColor(.8));
+        gr.addColorStop(0.4,randomColor(.3));
+        gr.addColorStop(0.8,randomColor(.6));
+        gr.addColorStop(1,randomColor(.2));
+
+        ctx.fillStyle = gr;
+        ctx.arc(circleObject.x, circleObject.y, circleObject.rad, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+    }
+
+
+    function moveCreate() {
+      var mousePosition={
+        x:0,
+        y:0
+      };
+      canvas.addEventListener('mousemove', function (e) {
+
+        mousePosition.x= e.clientX;
+        mousePosition.y= e.clientY;
+
+        var currentPosition={
+          x:mousePosition.x,
+          y:mousePosition.y
+        };
+        var nextPosition={
+          x:currentPosition.x+randomNumber(-20,20),
+          y:currentPosition.y+randomNumber(-40,40)
+        };
+
+        for( var i=0;i<5;i++){
+          cc();
+        }
+
+        function cc() {
+          clearCC();
+          createNextPosition();
+          drawLine();
+          drawCircle();
+        }
+
+        function clearCC() {
+//          ctx.clearRect(mousePosition.x-100,mousePosition.y-100,200,200);
+        }
+        function createNextPosition() {
+          currentPosition.x=nextPosition.x;
+          currentPosition.y=nextPosition.y;
+          nextPosition.x+=randomNumber(-50,50);
+          nextPosition.y+=randomNumber(-10,10);
+        }
+        function drawLine() {
+          ctx.beginPath();
+          ctx.strokeStyle=randomColor();
+          ctx.moveTo(currentPosition.x,currentPosition.y);
+          ctx.lineTo(nextPosition.x,nextPosition.y);
+          ctx.stroke();
+
+        }
+        function drawCircle() {
+          ctx.beginPath();
+          ctx.fillStyle=randomColor(Math.random());
+          ctx.arc(nextPosition.x,nextPosition.y,randomNumber(3,9),0,Math.PI*2)
+          ctx.fill();
+
+        }
+
+      });
+    }
+    moveCreate();
+
+/*
+    // 太阳系
+
+    //椭圆路线绘制
+    function ellipse(ctx,x,y,a,b){
+      var step = (a > b) ? 1 / a : 1 / b;
+      ctx.beginPath();
+      ctx.moveTo(x + a, y); //从椭圆的左端点开始绘制
+      for (var i = 0; i < 2 * Math.PI; i += step)
+      {
+        ctx.lineTo(x + a * Math.cos(i), y + b * Math.sin(i));
+      }
+      ctx.closePath();
+      ctx.stroke();
+    }
+    var time=0;
+
+    function centerPoint(ctx) {
+      ctx.beginPath();
+      ctx.fillStyle='#f60';
+      ctx.arc(600,75,15,0,Math.PI*2);
+      ctx.fill();
+    }
+    //椭圆上小球运动的实现
+    function moveCircle(ctx,x,y,a,b,r,speed){
+      ellipse(ctx,x,y,a,b);
+      centerPoint(ctx);
+//      var step = (a > b) ? 1 / a : 1 / b;
+      ctx.fillStyle=randomColor();
+      if(time==0){
+        ctx.beginPath();
+        ctx.arc(x,y,r,0,2*Math.PI,true);
+        ctx.closePath();
+        ctx.fill();
+      }else{
+        ctx.beginPath();
+        ctx.arc(x+a*Math.cos(time),y+b*Math.sin(time),r,0,2*Math.PI,true);
+        ctx.closePath();
+        ctx.fill();
+      }
+      time+=speed;
+    }
+
+    var ellOne={
+      x:600,
+      y:75,
+      a:100,
+      b:50,
+      r:5
+    };
+    ellipse(ctx,ellOne.x,ellOne.y,ellOne.a,ellOne.b);
+    setInterval(function () {
+      ctx.clearRect(300,0,600,150);
+      moveCircle(ctx,ellOne.x,ellOne.y,ellOne.a,ellOne.b,ellOne.r,0.08);
+      moveCircle(ctx,ellOne.x,ellOne.y,ellOne.a+10,ellOne.b-20,ellOne.r,0.05);
+      ctx.save();
+      moveCircle(ctx,ellOne.x,ellOne.y,ellOne.a+10,ellOne.b+20,ellOne.r,0.02);
+      ctx.translate(40,0);
+      ctx.restore();
+      moveCircle(ctx,ellOne.x,ellOne.y,ellOne.a-40,ellOne.b+20,ellOne.r,0.01);
+    },150);
+*/
+  })();
+</script>
+
+<!--
+<script>
+  canvas=document.getElementById('myTopCanvas');
+  ctx=canvas.getContext('2d');
+  var cycle1={
+
+    x:150,
+
+    y:150,
+
+    r:25
+
+  }
+
+  var cycle2={
+
+    x:250,
+
+    y:250,
+
+    r:50
+
+  }
+
+  ctx.beginPath();
+
+  ctx.arc(cycle1.x,cycle1.y,cycle1.r,0,Math.PI*2,false);
+
+  ctx.stroke();
+
+  ctx.beginPath();
+
+  ctx.arc(cycle2.x,cycle2.y,cycle2.r,0,Math.PI*2,false);
+
+  ctx.stroke();
+
+
+
+  var gr=ctx.createRadialGradient(cycle1.x,cycle1.y,cycle1.r,cycle2.x,cycle2.y,cycle2.r);
+
+  gr.addColorStop(0,'rgba(255,0,0,0.75)');
+
+  gr.addColorStop(0.5,'rgba(0,255,0,0.75)');
+
+  gr.addColorStop(1,'rgba(0,0,255,0.75)');
+
+
+
+  ctx.fillStyle=gr;
+
+  ctx.fillRect(0,0,500,500);
+</script>
+-->
+</body>
+</html>

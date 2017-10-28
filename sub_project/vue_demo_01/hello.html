@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta name="Keywords" content=""/>
+  <meta name="description" content=""/>
+  <title>hello</title>
+  <style>
+    .red{
+      color: #f00;
+    }
+    .bd{
+      background: #ddd;
+    }
+  </style>
+  <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>{{msg}}</p>
+  <h3 v-html="msg"></h3>
+  <div class="bd" v-bind:class="{red:isActive}">aasdfasdf</div>
+</div>
+
+
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      msg:'hello world from vue.js',
+      isActive:true
+    }
+  });
+</script>
+</body>
+</html>
